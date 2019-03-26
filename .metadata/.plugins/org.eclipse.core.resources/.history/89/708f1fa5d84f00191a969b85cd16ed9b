@@ -7,9 +7,10 @@ import br.com.targettrust.locadora.entidades.Carro;
 public class EquipamentoRepositoryImpl implements EquipamentoRepository {
 
 @Override
-public void insert	(Equipamento equipamentos  {
+public void insert	(Equipament equipamento  {
 	try {
-		String insert = "INSERT INTO equipamento ("descricao")
+		String insert = "INSERT INTO equipamento(" 
+				+ "	descricao")"
 				+ "	VALUES (?)";
 		Connection connection = getConnection();
 		PreparedStatement statement = connection.prepareStatement(insert);
@@ -22,14 +23,15 @@ public void insert	(Equipamento equipamentos  {
 		// TODO: handle exception
 		e.printStackTrace();
 	}
-	System.out.println("Descriçao do equipamento " + equipamento.getEquipamento() + "inserido com sucesso");
+	System.out.println("Carro de placa " + carro.getPlaca() + "inserido com sucesso");
 }
 
 @Override
-public void updateEquipamento(Equipamento equipamento) {
+public void updateCarro(Carro carro) {
 	// TODO Auto-generated method stub
-	String sql = "UPDATE equipamento SET "
-			+ "  descricao = ? "
+	String sql = "UPDATE carro SET "
+			+ "  placa = ?, marca = ?, modelo = ?,"
+			+ "  cor = ?, portas = ?, ano = ? "
 			+ " WHERE id = ? ";
 	try {
 		Connection connection = this.getConnection();
