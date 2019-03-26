@@ -1,0 +1,27 @@
+
+public class Conta {
+	private double saldo;
+	private String documento;
+	
+	public Conta(double saldo, String documento) {
+		this.saldo=saldo;
+		this.documento=documento;
+	}
+
+	public boolean sacar(double cem) {
+		if (cem<0) {
+			return false;
+		}
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	public boolean depositar(double cem) {
+		if(cem<0) {
+			return false
+		}
+		// TODO Auto-generated method stub
+		return true;
+	}
+}
+

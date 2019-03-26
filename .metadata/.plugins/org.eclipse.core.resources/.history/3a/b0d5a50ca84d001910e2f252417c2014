@@ -1,0 +1,22 @@
+import org.junit.Assert;
+import org.junit.Test;
+
+
+public class TesteConta {
+	@Test
+	public void testeSaque100Reais() {
+		double cem=100.0;
+		Conta conta=new Conta(0.0,"123456");
+		boolean retornoDoSaque=conta.sacar(cem);
+		Assert.assertTrue(retornoDoSaque);
+		
+	}
+	@Test
+	public void testeDeposito100reais() {
+	double cem=100.0;
+	Conta conta=new Conta(0.0,"123456");
+	boolean retornoDoDeposito=conta.depositar(cem);
+	Assert.assertTrue(retornoDoDeposito);
+	}
+
+}
