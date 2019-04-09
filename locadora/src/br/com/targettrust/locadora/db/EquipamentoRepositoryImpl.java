@@ -1,95 +1,152 @@
 package br.com.targettrust.locadora.db;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
-import br.com.targettrust.locadora.entidades.Carro;
+import org.postgresql.util.PSQLException;
 
-public class EquipamentoRepositoryImpl implements EquipamentoRepository {
+import br.com.targettrust.locadora.entidades.Equipamento;
+import br.com.targettrust.locadora.util.DbUtil;
 
-@Override
-public void insert	(Equipamento equipamentos  {
-	try {
-		String insert = "INSERT INTO equipamento ("descricao")
-				+ "	VALUES (?)";
-		Connection connection = getConnection();
-		PreparedStatement statement = connection.prepareStatement(insert);
-		statement.setString(1, equipamento.getdDescricao());
-		
-		statement.executeUpdate();
-		statement.close();
-		connection.close();
-	} catch (Exception e) {
-		// TODO: handle exception
-		e.printStackTrace();
-	}
-	System.out.println("Descriçao do equipamento " + equipamento.getEquipamento() + "inserido com sucesso");
-}
 
-@Override
-public void updateEquipamento(Equipamento equipamento) {
-	// TODO Auto-generated method stub
-	String sql = "UPDATE equipamento SET "
-			+ "  descricao = ? "
-			+ " WHERE id = ? ";
-	try {
-		Connection connection = this.getConnection();
-		PreparedStatement ps = connection.prepareStatement(sql);
-		ps.setString(1, carro.getPlaca());
-		ps.setString(2, carro.getMarca());
-		ps.setString(3, carro.getModelo());
-		ps.setString(4, carro.getCor());
-		ps.setInt(5, carro.getPortas());
-		ps.setInt(6,  carro.getAno());
-		ps.setInt(7, carro.getId());
-		ps.executeUpdate();
-		connection.close();
-	}
-	catch (Exception e) {
-		e.printStackTrace();
-	}
+public class EquipamentoRepositoryImpl implements EquipamentoRepository{
 
-}
-
-@Override
-public List<Equipamento> list() {
-	// TODO Auto-generated method stub
-	try {
-		String sql = "select * from euipamento";
-		Connection connection = getConnection();
-		Statement statement = connection.createStatement();
-		ResultSet resultSet = statement.executeQuery(sql);
-		List<Equipamento> equipamentos = new ArrayList<>();
-		while (resultSet.next()) {
-			Equipamento equipamento = new Equipamento();
-			// popular
-			equipamento.setId(resultSet.getInt("Id"));
-			equipamento.setDescricao(resultSet.getString("descricao"));
-			equipamento.add(equipamento);
+	@Override
+	public void insert(Equipamento equipamento) {
+		if(equipamento.getId() != null) {
+			throw new IllegalArgumentException("Para inclusão de veículo o id "
+					+ " não deve ser informado");
 		}
-		return equipamento;
-	} catch (Exception e) {
-		// TODO: handle exception
-		e.printStackTrace();
+		if(equipamento.getDescricao() == null ||
+				equipamento.getDescricao().trim().equals("")) {
+			throw new IllegalArgumentException("O campo descrição é obrigatório");
+		}
+		
+		String sql = "insert into EQUIPAMENTO (DESCRICAO) values ( ? )";
+		try {
+			Connection connection = DbUtil.getConnection();
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setString(1, equipamento.getDescricao());
+			ps.executeUpdate();
+		}
+		catch (PSQLException e) {
+			throw new EquipamentoJaCadastradoException();
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		
 	}
-	return null;
-}
 
-@Override
-public void delete(Equipamento equipamento) {
-	// TODO Auto-generated method stub
-
-}
-
-private Connection getConnection() {
-	Connection connection = null;
-	try {
-		connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/locadora", "postgres",
-				"postgres");
-	} catch (SQLException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
+	@Override
+	public void update(Equipamento equipamento) {
+		// TODO Auto-generated method stub
+		String sql = "update EQUIPAMENTO set descricao = ? "
+				+ " where id = ?";
+		try {
+			Connection connection = DbUtil.getConnection();
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setString(1, equipamento.getDescricao());
+			ps.setInt(2, equipamento.getId());
+			ps.executeUpdate();
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
 	}
-	return connection;
-}
+
+	@Override
+	public void delete(Equipamento equipamento) {
+		// TODO Auto-generated method stub
+		String sql = "delete from EQUIPAMENTO where id = ?";
+		try {
+			Connection connection = DbUtil.getConnection();
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setInt(1, equipamento.getId());
+			ps.executeUpdate();
+		}
+		catch(SQLException e) {
+			e.printStackTrace();
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		
+	}
+
+	@Override
+	public List<Equipamento> list() {
+		// TODO Auto-generated method stub
+		String sql = "select * from EQUIPAMENTO";
+		try {
+			Connection connection = DbUtil.getConnection();
+			Statement st = connection.createStatement();
+			ResultSet rs = st.executeQuery(sql);
+			List<Equipamento> equipamentos = new ArrayList<>();
+			while(rs.next()) {
+				Equipamento equipamento = new Equipamento();
+				equipamento.setId(rs.getInt("id"));
+				equipamento.setDescricao(rs.getString("descricao"));
+				equipamentos.add(equipamento);
+			}
+			return equipamentos;
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+
+	@Override
+	public Equipamento findById(Integer id) {
+		String sql = "select * from EQUIPAMENTO where id = ?";
+		try {
+			Connection connection = DbUtil.getConnection();
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+			if(rs.next()) {
+				Equipamento equipamento = new Equipamento();
+				equipamento.setId(rs.getInt("id"));
+				equipamento.setDescricao(rs.getString("descricao"));
+				return equipamento;
+			}
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+		}
+		return null;
+	}
+
+	@Override
+	public Equipamento findByDescricao(String descricao) {
+		String sql = " select * from EQUIPAMENTO where DESCRICAO = ? "; 
+		try {
+			Connection connection = DbUtil.getConnection();
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setString(1, descricao);
+			ResultSet rs = ps.executeQuery();
+			if(rs.next()) {
+				Equipamento equipamento = new Equipamento();
+				equipamento.setId(rs.getInt("id"));
+				equipamento.setDescricao(rs.getString("descricao"));
+				return equipamento;				
+			}
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+		}
+		return null;
+	}
 
 }

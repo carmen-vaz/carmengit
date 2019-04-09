@@ -45,7 +45,4 @@ public class Veiculo extends Entidade{
 	public void setEquipamentos(Equipamento[] equipamentos) {
 		this.equipamentos = equipamentos;
 	}
-	
-	
-
 }
