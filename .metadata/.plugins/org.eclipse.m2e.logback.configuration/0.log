@@ -311,3 +311,21 @@
 2019-04-09 12:11:37,784 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
 2019-04-09 12:11:37,786 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2019-04-09 12:11:37,790 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-04-09 12:11:37,791 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\sala01\carmen\spring.test\src\test\resources
+2019-04-09 12:16:09,063 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-04-09 12:16:09,063 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\sala01\carmen\rest\src\main\resources
+2019-04-09 12:16:09,064 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-04-09 12:16:09,064 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\sala01\carmen\rest\src\test\resources
+2019-04-09 12:16:51,175 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-04-09 12:16:51,175 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-04-09 12:16:51,175 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-04-09 12:16:51,178 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-04-09 12:16:51,179 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\sala01\carmen\spring.test\src\test\resources
+2019-04-09 12:20:14,407 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-04-09 12:20:14,408 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-04-09 12:20:14,409 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-04-09 12:20:14,411 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-04-09 12:20:14,411 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\sala01\carmen\spring.test\src\test\resources
+2019-04-09 12:20:33,179 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-04-09 12:20:33,179 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-04-09 12:20:33,179 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
