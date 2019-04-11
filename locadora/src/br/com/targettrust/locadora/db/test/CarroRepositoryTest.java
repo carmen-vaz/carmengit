@@ -9,6 +9,7 @@ import br.com.targettrust.locadora.db.VeiculoRepository;
 import br.com.targettrust.locadora.db.VeiculoRepositoryImpl;
 import br.com.targettrust.locadora.entidades.Carro;
 import br.com.targettrust.locadora.entidades.Veiculo;
+import br.com.targettrust.locadora.excption.VeiculoNaoEncontradoException;
 
 public class CarroRepositoryTest {
 	
@@ -75,7 +76,7 @@ public class CarroRepositoryTest {
 		carro.setModelo("Gol");
 		carro.setPlaca(PLACA_DEFAULT);
 		carro.setPortas(4);
-		veiculoRepository.insert(carro);
+		veiculoRepository.insertVeiculo(carro);
 		carro.setId(veiculoRepository.findByPlaca(carro.getPlaca()).getId());
 		carro.setCor("Preto");
 		//Act
