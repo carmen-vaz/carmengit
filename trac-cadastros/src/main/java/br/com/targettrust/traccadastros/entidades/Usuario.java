@@ -1,5 +1,6 @@
 package br.com.targettrust.traccadastros.entidades;
 
+
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 

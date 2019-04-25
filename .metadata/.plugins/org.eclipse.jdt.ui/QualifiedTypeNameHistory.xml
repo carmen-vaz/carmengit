@@ -21,4 +21,16 @@
 <fullyQualifiedTypeName name="javax.persistence.Table"/>
 <fullyQualifiedTypeName name="javax.persistence.Entity"/>
 <fullyQualifiedTypeName name="javax.persistence.ManyToOne"/>
+<fullyQualifiedTypeName name="br.com.targettrust.traccadastros.repositorio.LocacaoRepository"/>
+<fullyQualifiedTypeName name="br.com.targettrust.traccadastros.repositorio.UsuarioRepository"/>
+<fullyQualifiedTypeName name="org.aspectj.lang.annotation.Before"/>
+<fullyQualifiedTypeName name="br.com.targettrust.traccadastros.entidades.Entidade"/>
+<fullyQualifiedTypeName name="br.com.targettrust.traccadastros.entidades.Cliente"/>
+<fullyQualifiedTypeName name="br.com.targettrust.traccadastros.entidades.Funcionario"/>
+<fullyQualifiedTypeName name="br.com.targettrust.traccadastros.entidades.Veiculo"/>
+<fullyQualifiedTypeName name="org.springframework.boot.test.context.SpringBootTest"/>
+<fullyQualifiedTypeName name="org.junit.runner.RunWith"/>
+<fullyQualifiedTypeName name="br.com.targettrust.traccadastros.repositorio.ReservaRepository"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="br.com.targettrust.traccadastros.repositorio.VeiculoRepository"/>
 </qualifiedTypeNameHistroy>

@@ -1,5 +1,6 @@
 package br.com.targettrust.traccadastros.repositorios;
 
+
 import java.util.HashSet;
 
 import org.junit.After;
