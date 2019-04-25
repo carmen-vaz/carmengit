@@ -1,14 +1,21 @@
 package br.com.targettrust.traccadastros.repositorio;
-
+import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
-import br.com.targettrust.traccadastros.entidades.Veiculo;
+import br.com.targettrust.traccadastros.entidades.Carro;
 
-public interface VeiculoRepository extends JpaRepository<Veiculo, Long>{
-
+@Repository
+public class CustomRepository {
+	
+	@Autowired
+	private EntityManager entityManager;
+	
 	@Transactional
-	void deleteByPlaca(String placa);
+	public void saveCarro(Carro carro) {
+		entityManager.persist(carro);
+	}
 
 }
