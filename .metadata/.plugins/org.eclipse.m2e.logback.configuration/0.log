@@ -759,3 +759,18 @@
 2019-04-25 12:20:33,498 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2019-04-25 12:20:33,501 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2019-04-25 12:20:33,501 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\sala01\carmen\trac-cadastros\src\test\resources
+2019-05-02 08:26:38,672 [Worker-6] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2019-05-02 08:27:02,253 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-02 08:27:02,299 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-05-02 08:27:02,331 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-05-02 08:27:02,331 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-02 08:27:02,331 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\sala01\carmen\trac-cadastros\src\test\resources
+2019-05-02 10:40:23,882 [Worker-23] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Collecting project info '/pom.xml' C:\Users\sala01\carmen\plain-jpa\pom.xml
+2019-05-02 10:40:24,907 [Worker-23] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: br.com.targettrust:plain-jpa:0.0.1-SNAPSHOT @ C:\Users\sala01\carmen\plain-jpa\pom.xml.
+2019-05-02 10:40:26,405 [Worker-23] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /plain-jpa/src/main/java
+2019-05-02 10:40:26,409 [Worker-23] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /plain-jpa/src/test/java
+2019-05-02 10:40:26,510 [Worker-23] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 2 sec
+2019-05-02 10:40:27,067 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-02 10:40:27,067 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\sala01\carmen\plain-jpa\src\main\resources
+2019-05-02 10:40:27,070 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-05-02 10:40:27,070 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\sala01\carmen\plain-jpa\src\test\resources
